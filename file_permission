@@ -1,0 +1,4 @@
+chmod a+rwX /users/sunnypiya/ 
+/users/sunnypiya/desktop 
+chmod a+rwX /users/sunnypiya/desktop/SAB_Ops/SAB_monthly_pull/SAB_Directory_2016_01_04.csv
+
