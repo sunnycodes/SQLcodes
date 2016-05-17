@@ -1,5 +1,0 @@
-cd into the directory
-
-cp **/*.xlsx ~/Desktop/Destination_folder 
-
-mv **/*.xlsx ~/Desktop/Destination_folder
