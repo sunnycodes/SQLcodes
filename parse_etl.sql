@@ -1,10 +1,10 @@
-/****************************************************************************
+/-----------------------------------------------------------------------------
 * Author: Sunny Piya
 * Notes : ETL script to prepate raw xml file for import_user upload
 *	  Custom fields like keywords need to be processed seperately
 *         and will be part of the futue release
 * Date  : 09/12/2016
-*****************************************************************************/
+-----------------------------------------------------------------------------/
 
 -----------------------------------------------------------------------------
 -- create table to hold raw xml data
@@ -88,7 +88,7 @@ create table xml_input_numbered_3 as
 
 -----------------------------------------------------------------------------
 -- extract emails from affiliation data where available
----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 drop table  xml_input_numbered_4;
 create table  xml_input_numbered_4 as
 (
