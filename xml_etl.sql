@@ -1,8 +1,8 @@
 /****************************************************************************
 * Author: Sunny Piya
-* Notes : ETL script to prepate raw xml file for import user upload
-*		  Custom fields like keywords need to be processes seperately
-*		  and will be part of the futue release
+* Notes : ETL script to prepate raw xml file for import_user upload
+*	  Custom fields like keywords need to be processed seperately
+*         and will be part of the futue release
 * Date  : 09/12/2016
 *****************************************************************************/
 
@@ -34,8 +34,8 @@ select
 			from(
 				select * 
 					from(
-						select trim(split_part(xml_input, '<', 1))::int 	raw_row_nums
-								, split_part(xml_input, '<', 2) 			xml_body 
+						select trim(split_part(xml_input, '<', 1))::int raw_row_nums
+								, split_part(xml_input, '<', 2) xml_body 
 							from xml_input_numbered --where xml_input like '%Author%'
 							order by xml_input 
 							--limit 10000
