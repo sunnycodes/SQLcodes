@@ -1,5 +1,4 @@
 /*-----------------------------------------------------------------------------
-* Author: Sunny Piya
 * Notes : ETL script to prepate raw xml file for import_user upload
 *	  Custom fields like keywords need to be processed seperately
 *         and will be part of the futue release
