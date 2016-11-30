@@ -69,7 +69,8 @@ CREATE TABLE PE_metadata (
 	Organization character varying,
 	EmpSector character varying
 )
---join to survey data table with information about indstry and empsector
+
+--output file
 COPY
 (	
 	SELECT a1.*, b1.*
