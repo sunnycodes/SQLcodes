@@ -8,7 +8,7 @@
 -----------------------------------------------------------------------------
 -- create table to hold raw xml data
 -----------------------------------------------------------------------------
-drop table xml_input_numbered;
+drop table if exists xml_input_numbered;
 create table xml_input_numbered
     (
     xml_input text
@@ -19,7 +19,7 @@ COPY xml_input_numbered FROM '<input file location>' CSV;
 -----------------------------------------------------------------------------
 -- organize xml data with row_nums, node, and text values
 -----------------------------------------------------------------------------
-drop table xml_input_numbered_1;
+drop table if exists xml_input_numbered_1;
 create table xml_input_numbered_1 as
 (
 select 
@@ -56,7 +56,7 @@ select
 -----------------------------------------------------------------------------
 -- assign associated pmid to each row
 -----------------------------------------------------------------------------
-drop table xml_input_numbered_2;
+drop table if exists xml_input_numbered_2;
 create table xml_input_numbered_2 as
 (
   select 
@@ -74,7 +74,7 @@ create table xml_input_numbered_2 as
 -----------------------------------------------------------------------------
 -- assign author ranking within each PMID
 -----------------------------------------------------------------------------
-drop table xml_input_numbered_3; 
+drop table if exists xml_input_numbered_3; 
 create table xml_input_numbered_3 as
 (
 	Select 
@@ -88,7 +88,7 @@ create table xml_input_numbered_3 as
 -----------------------------------------------------------------------------
 -- extract emails from affiliation data where available
 -----------------------------------------------------------------------------
-drop table  xml_input_numbered_4;
+drop table if exists  xml_input_numbered_4;
 create table  xml_input_numbered_4 as
 (
 	select 
@@ -110,7 +110,7 @@ create table  xml_input_numbered_4 as
 -----------------------------------------------------------------------------
 -- extract pmid and first names
 -----------------------------------------------------------------------------
-drop table pmid_firstname;
+drop table if exists pmid_firstname;
 create table pmid_firstname as
 (
 select pmid_full, author_ranking, text_value from xml_input_numbered_4 where node  = 'ForeName'
@@ -121,7 +121,7 @@ select pmid_full, author_ranking, text_value from xml_input_numbered_4 where nod
 -----------------------------------------------------------------------------
 -- extract pmid and last names
 -----------------------------------------------------------------------------
-drop table pmid_lastname;
+drop table if exists pmid_lastname;
 create table pmid_lastname as
 (
 select pmid_full, author_ranking, text_value from xml_input_numbered_4 where node  = 'LastName'
@@ -132,7 +132,7 @@ select pmid_full, author_ranking, text_value from xml_input_numbered_4 where nod
 -----------------------------------------------------------------------------
 -- extract pmid and Initials
 -----------------------------------------------------------------------------
-drop table pmid_initials;
+drop table if exists pmid_initials;
 create table pmid_initials as
 (
 select pmid_full, author_ranking, text_value from xml_input_numbered_4 where node  = 'Initials'
@@ -143,7 +143,7 @@ select pmid_full, author_ranking, text_value from xml_input_numbered_4 where nod
 -----------------------------------------------------------------------------
 -- extract pmid and emails
 -----------------------------------------------------------------------------
-drop table pmid_email;
+drop table if exists pmid_email;
 create table pmid_email as
 (
 select pmid_full, author_ranking, text_value, email from xml_input_numbered_4 where node = 'Affiliation'
