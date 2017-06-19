@@ -1,6 +1,4 @@
 
-DROP TABLE cocreation_merge;
-
 CREATE TABLE cocreation_merge
 (
 	  "User id" integer,
