@@ -1,4 +1,3 @@
-
 CREATE TABLE cocreation_merge
 (
 	  "User id" integer,
